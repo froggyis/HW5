@@ -49,6 +49,7 @@ for i in range(4):
         inst_name = 'Metal3_' + str(i * 2 + j)
         layer = 'ME3'
         x1 = cs_array[i][0]._x + Dx + j * Px
+        # print(f'Dx : {Dx}  Px : {Px}')
         x2 = x1 + M3_WIDTH
         y1 = 0
         y2 = die_y2#by2

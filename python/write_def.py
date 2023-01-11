@@ -31,6 +31,7 @@ def write_def(def_name=None, die=None, component_list=None, specialnet_list=None
             for i, specialnet in enumerate(specialnet_list):
                 if specialnet.layer == 'ME3':
                     name = specialnet.inst_name
+                    print(f'x1 : {specialnet._x1}  x2 : {specialnet._x2}')
                     x = (specialnet._x1 + specialnet._x2) // 2
                     y1 = specialnet._y1
                     y2 = specialnet._y2

@@ -66,15 +66,11 @@ int main(int argc, char **argv)
             string inst_name = "Metal3_" + to_string(i * 2 + j);
             string layer = "ME3";
             int x1 = cs_array[i][0]->_x + Dx + j * Px;
+            // cout<<"Dx : "<<Dx <<" Px : "<<Px<<endl;
             int x2 = x1 + M3_WIDTH;
             int y1 = 0;
             int y2 = die_y2;
-            // auto ME3_tmp = ME3_specialnet[i][j];
-            // ME3_tmp->_x1 = x1;ME3_tmp->_x2=x2;
-            // ME3_tmp->_y1 = y1;ME3_tmp->_y2=y2;
-            // ME3_tmp->inst_name = inst_name;
-            // ME3_tmp->layer = layer;
-            SpecialNet *tmp = new SpecialNet(inst_name, layer, x1, x2, y1, y2);
+            SpecialNet *tmp = new SpecialNet(inst_name, layer, x1, y1, x2, y2);
             ME3_specialnet[i][j] = tmp;
         }
     }
@@ -93,10 +89,6 @@ int main(int argc, char **argv)
             int x2 = ME3_specialnet[i][j]->_x2;
             int y1 = cs_array[i][j]->_y + CS_Y1_TO_DRAIN;
             int y2 = y1 + M4_WIDTH;
-            // auto ME4_tmp = ME4_specialnet_drain[i][j];
-            // ME4_tmp->inst_name = inst_name;ME4_tmp->layer = layer;
-            // ME4_tmp->_x1 = x1; ME4_tmp->_x2 = x2;
-            // ME4_tmp->_y1 = y1; ME4_tmp->_y2 = y2;
             SpecialNet *drain_1 = new SpecialNet(inst_name, layer, x1, y1, x2, y2);
             ME4_specialnet_drain[i][j] = drain_1;
 
@@ -105,11 +97,6 @@ int main(int argc, char **argv)
             x2 = ME3_specialnet[3-i][j]->_x2;
             y1 = cs_array[3-i][j]->_y + CS_Y1_TO_DRAIN;
             y2 = y1 + M4_WIDTH;
-            // ME4_tmp = ME4_specialnet_drain[3-i][j];
-            // ME4_tmp->inst_name = inst_name;ME4_tmp->layer = layer;
-            // ME4_tmp->_x1 = x1; ME4_tmp->_x2 = x2;
-            // ME4_tmp->_y1 = y1; ME4_tmp->_y2 = y2;
-
             SpecialNet *drain_2 = new SpecialNet(inst_name, layer, x1, y1, x2, y2);
             ME4_specialnet_drain[3-i][j] = drain_2;
 
@@ -118,10 +105,6 @@ int main(int argc, char **argv)
             x2 = ME3_specialnet[i][j]->_x2;
             y1 = cs_array[i][3-j]->_y + CS_Y1_TO_DRAIN;
             y2 = y1 + M4_WIDTH;
-            // ME4_tmp = ME4_specialnet_drain[i][3-j];
-            // ME4_tmp->inst_name = inst_name;ME4_tmp->layer = layer;
-            // ME4_tmp->_x1 = x1; ME4_tmp->_x2 = x2;
-            // ME4_tmp->_y1 = y1; ME4_tmp->_y2 = y2;
             SpecialNet *drain_3 = new SpecialNet(inst_name, layer, x1, y1, x2, y2);
             ME4_specialnet_drain[i][3-j] = drain_3;
 
@@ -130,10 +113,6 @@ int main(int argc, char **argv)
             x2 = ME3_specialnet[3-i][j]->_x2;
             y1 = cs_array[3-i][3-j]->_y + CS_Y1_TO_DRAIN;
             y2 = y1 + M4_WIDTH;
-            // ME4_tmp = ME4_specialnet_drain[3-i][3-j];
-            // ME4_tmp->inst_name = inst_name;ME4_tmp->layer = layer;
-            // ME4_tmp->_x1 = x1; ME4_tmp->_x2 = x2;
-            // ME4_tmp->_y1 = y1; ME4_tmp->_y2 = y2;
             SpecialNet *drain_4 = new SpecialNet(inst_name, layer, x1, y1, x2, y2);
             ME4_specialnet_drain[3-i][3-j] = drain_4;
         }
@@ -301,26 +280,27 @@ void write_def(string file_name, Die die,  vector<Component*> component_list,  v
 
     int x, x1, x2, y, y1, y2;
     fout<<"SPECIALNETS "<<sepcialnet_list.size()<<" ;\n";
-    for(auto net : sepcialnet_list)
+    for(auto specialnet : sepcialnet_list)
     {
-        if(net->layer =="ME3")
+        if(specialnet->layer =="ME3")
         {
-            string name = net->inst_name;
-            x = (net->_x1 + net->_x2); // 2;
-            y1 = net->_y1;
-            y2 = net->_y2;
-            fout<<" -"<<name<<"\n";
+            string name = specialnet->inst_name;
+            // cout<<"_x1 : "<<specialnet->_x1<<" _x2 : "<<specialnet->_x2<<endl;
+            x = (specialnet->_x1 + specialnet->_x2) / 2;
+            y1 = specialnet->_y1;
+            y2 = specialnet->_y2;
+            fout<<" - "<<name<<"\n";
             fout<<"  + ROUTED ME3 440 "<<"( "<<x<<" "<<y1<< " ) "<<"( * "<<y2<<" ) ; \n";
         }
 
-        else if(net->layer =="ME4")
+        else if(specialnet->layer =="ME4")
         {
-            string name = net->inst_name;
-            x1 = net->_x1;
-            x2 = net->_x2;
-            y = (net->_y1 + net->_y2); // 2;
-            fout<<" -"<<name<<"\n";
-            fout<<"  + ROUTED ME4 1000 "<<"( "<<x<<" "<<y1<< " ) "<<"( * "<<y2<<" ) ; \n";
+            string name = specialnet->inst_name;
+            x1 = specialnet->_x1;
+            x2 = specialnet->_x2;
+            y = (specialnet->_y1 + specialnet->_y2) / 2;
+            fout<<" - "<<name<<"\n";
+            fout<<"  + ROUTED ME4 1000 "<<"( "<<x1<<" "<<y<< " ) "<<"( "<<x2<<" * ) ; \n";
         }
   
     }

@@ -95,62 +95,62 @@ COMPONENTS 40 ;
 END COMPONENTS
 
 SPECIALNETS 28 ;
- -Metal3_0
-  + ROUTED ME3 440 ( 7410 7850 ) ( * 33830 ) ; 
- -Metal3_1
-  + ROUTED ME3 440 ( 8160 8600 ) ( * 33830 ) ; 
- -Metal3_2
-  + ROUTED ME3 440 ( 16320 16760 ) ( * 33830 ) ; 
- -Metal3_3
-  + ROUTED ME3 440 ( 17070 17510 ) ( * 33830 ) ; 
- -Metal3_4
-  + ROUTED ME3 440 ( 25230 25670 ) ( * 33830 ) ; 
- -Metal3_5
-  + ROUTED ME3 440 ( 25980 26420 ) ( * 33830 ) ; 
- -Metal3_6
-  + ROUTED ME3 440 ( 34140 34580 ) ( * 33830 ) ; 
- -Metal3_7
-  + ROUTED ME3 440 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_0
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_1
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_9
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_8
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_2
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_3
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_11
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_10
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_6
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_7
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_15
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_14
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_4
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_5
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_13
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_drain_12
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_port_0
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_port_1
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_port_2
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
- -Metal4_port_3
-  + ROUTED ME4 1000 ( 34890 35330 ) ( * 33830 ) ; 
+ - Metal3_0
+  + ROUTED ME3 440 ( 7630 0 ) ( * 33830 ) ; 
+ - Metal3_1
+  + ROUTED ME3 440 ( 8380 0 ) ( * 33830 ) ; 
+ - Metal3_2
+  + ROUTED ME3 440 ( 16540 0 ) ( * 33830 ) ; 
+ - Metal3_3
+  + ROUTED ME3 440 ( 17290 0 ) ( * 33830 ) ; 
+ - Metal3_4
+  + ROUTED ME3 440 ( 25450 0 ) ( * 33830 ) ; 
+ - Metal3_5
+  + ROUTED ME3 440 ( 26200 0 ) ( * 33830 ) ; 
+ - Metal3_6
+  + ROUTED ME3 440 ( 34360 0 ) ( * 33830 ) ; 
+ - Metal3_7
+  + ROUTED ME3 440 ( 35110 0 ) ( * 33830 ) ; 
+ - Metal4_drain_0
+  + ROUTED ME4 1000 ( 1260 6090 ) ( 7850 * ) ; 
+ - Metal4_drain_1
+  + ROUTED ME4 1000 ( 1260 14670 ) ( 8600 * ) ; 
+ - Metal4_drain_9
+  + ROUTED ME4 1000 ( 1260 23250 ) ( 8600 * ) ; 
+ - Metal4_drain_8
+  + ROUTED ME4 1000 ( 1260 31830 ) ( 7850 * ) ; 
+ - Metal4_drain_2
+  + ROUTED ME4 1000 ( 10170 6090 ) ( 16760 * ) ; 
+ - Metal4_drain_3
+  + ROUTED ME4 1000 ( 10170 14670 ) ( 17510 * ) ; 
+ - Metal4_drain_11
+  + ROUTED ME4 1000 ( 10170 23250 ) ( 17510 * ) ; 
+ - Metal4_drain_10
+  + ROUTED ME4 1000 ( 10170 31830 ) ( 16760 * ) ; 
+ - Metal4_drain_6
+  + ROUTED ME4 1000 ( 19080 6090 ) ( 25670 * ) ; 
+ - Metal4_drain_7
+  + ROUTED ME4 1000 ( 19080 14670 ) ( 26420 * ) ; 
+ - Metal4_drain_15
+  + ROUTED ME4 1000 ( 19080 23250 ) ( 26420 * ) ; 
+ - Metal4_drain_14
+  + ROUTED ME4 1000 ( 19080 31830 ) ( 25670 * ) ; 
+ - Metal4_drain_4
+  + ROUTED ME4 1000 ( 27990 6090 ) ( 34580 * ) ; 
+ - Metal4_drain_5
+  + ROUTED ME4 1000 ( 27990 14670 ) ( 35330 * ) ; 
+ - Metal4_drain_13
+  + ROUTED ME4 1000 ( 27990 23250 ) ( 35330 * ) ; 
+ - Metal4_drain_12
+  + ROUTED ME4 1000 ( 27990 31830 ) ( 34580 * ) ; 
+ - Metal4_port_0
+  + ROUTED ME4 1000 ( 0 500 ) ( 35330 * ) ; 
+ - Metal4_port_1
+  + ROUTED ME4 1000 ( 0 9080 ) ( 35330 * ) ; 
+ - Metal4_port_2
+  + ROUTED ME4 1000 ( 0 17660 ) ( 35330 * ) ; 
+ - Metal4_port_3
+  + ROUTED ME4 1000 ( 0 26240 ) ( 35330 * ) ; 
 END SPECIALNETS
 
 END DESIGN
